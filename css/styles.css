@@ -138,30 +138,30 @@ body{
   padding: clamp(6rem, 9.6vw, 8.4rem) 0 clamp(3rem, 4.8vw, 3.6rem);
 }
 
-/* Landing hero only: wider .container than Bootstrap defaults (more room for headline + CTAs in the 40% column) */
+/* Landing hero: same .container max-widths as Bootstrap (aligns with how-utility-incentives-work hero) */
 @media (min-width: 576px){
   .hero-content--landing > .container{
-    max-width: 600px;
+    max-width: 540px;
   }
 }
 @media (min-width: 768px){
   .hero-content--landing > .container{
-    max-width: 800px;
+    max-width: 720px;
   }
 }
 @media (min-width: 992px){
   .hero-content--landing > .container{
-    max-width: 1120px;
+    max-width: 960px;
   }
 }
 @media (min-width: 1200px){
   .hero-content--landing > .container{
-    max-width: 1280px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 1400px){
   .hero-content--landing > .container{
-    max-width: 1480px;
+    max-width: 1320px;
   }
 }
 
