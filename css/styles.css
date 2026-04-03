@@ -375,6 +375,8 @@ body{
 }
 
 /* ── Sticky scroll section (building left, text panels right) ── */
+/* Desktop text panels: sized for ~1440×900 and similar; short windows use more of dvh
+   so headlines aren’t clipped (avoid clamp min 18rem when 46vh is smaller). */
 
 .sticky-scroll-section{
   position: relative;
@@ -417,7 +419,9 @@ body{
   }
 
   .sticky-text-viewport{
-    height: clamp(18rem, 46vh, 32rem);
+    /* Cap at 32rem; on short viewports use up to 85vh so content fits (pairs with JS slide distance). */
+    height: min(32rem, 85vh);
+    height: min(32rem, 85dvh);
     overflow: hidden;
     width: 100%;
     position: relative;
@@ -428,12 +432,21 @@ body{
   }
 
   .sticky-text-track .sticky-copy-block{
-    height: clamp(18rem, 46vh, 32rem);
+    box-sizing: border-box;
+    height: min(32rem, 85vh);
+    height: min(32rem, 85dvh);
+    min-height: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 0;
-    padding-bottom: 0;
+    padding: 0.75rem 0 1rem;
+  }
+
+  @supports (justify-content: safe center){
+    .sticky-text-track .sticky-copy-block{
+      justify-content: safe center;
+    }
   }
 }
 
@@ -496,7 +509,7 @@ body{
 .sticky-copy-block h2{
   color: #1a1a1a;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.15;
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   letter-spacing: -0.02em;
 }
@@ -606,13 +619,6 @@ body{
   will-change: filter;
 }
 
-.feature-graphic.is-converged .feature-graphic-img{
-  filter:
-    blur(0)
-    drop-shadow(0 0 4px rgba(244,121,45,.4))
-    drop-shadow(0 0 1px rgba(244,121,45,.7));
-}
-
 .process-section{
   position: relative;
   color: #fff;
@@ -664,16 +670,24 @@ body{
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .process-step{
   position: relative;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .process-step-box{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
   padding: 1rem 0.75rem 1.1rem;
   border-radius: 12px;
   background: rgba(255,255,255,.04);
@@ -700,7 +714,7 @@ body{
 }
 
 .process-step-box:hover .process-step-desc{
-  max-height: 150px;
+  max-height: 320px;
   opacity: 1;
 }
 
@@ -739,7 +753,12 @@ body{
 }
 
 .process-step-label{
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 4.5em;
   color: rgba(255,255,255,.88);
   font-size: 0.98rem;
   line-height: 1.35;
@@ -760,6 +779,14 @@ body{
     grid-template-columns: 32px 1fr;
     align-items: start;
     column-gap: 0.8rem;
+  }
+
+  .process-step-label{
+    display: block;
+    min-height: 0;
+    flex: none;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .process-step-box .process-step-desc{

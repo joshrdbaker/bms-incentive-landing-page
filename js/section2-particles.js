@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const building = document.getElementById('section2Building');
-  const featureGraphic = document.getElementById('featureGraphic');
   const stickySection = document.getElementById('stickySection');
   const textViewport = document.getElementById('textViewport');
   const textTrack = document.getElementById('textTrack');
 
-  if (!building || !featureGraphic || !stickySection) return;
+  if (!building || !stickySection) return;
 
   var isDesktop = function () {
     return window.matchMedia('(min-width: 992px)').matches;
@@ -52,20 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const clarity = getClarityProgress();
     if (Math.abs(clarity - lastClarity) < 0.004) return;
     lastClarity = clarity;
-    const blur = 3 * (1 - clarity);
-    const tealStr = 1 - clarity;
-    const orangeStr = clarity;
-    building.style.filter =
-      `blur(${blur}px) ` +
-      `drop-shadow(0 0 ${60 * tealStr}px rgba(0,145,138,${0.7 * tealStr})) ` +
-      `drop-shadow(0 0 ${100 * tealStr}px rgba(0,145,138,${0.4 * tealStr})) ` +
-      `drop-shadow(0 0 ${4 * orangeStr}px rgba(244,121,45,${0.4 * orangeStr})) ` +
-      `drop-shadow(0 0 1px rgba(244,121,45,${0.7 * orangeStr}))`;
-    if (clarity >= 1) {
-      featureGraphic.classList.add('is-converged');
-    } else {
-      featureGraphic.classList.remove('is-converged');
-    }
+    const blur = 8 * (1 - clarity);
+    building.style.filter = blur > 0 ? `blur(${blur}px)` : 'none';
   }
 
   function onScroll() {
