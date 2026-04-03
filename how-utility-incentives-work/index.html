@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Utility Incentives Work | TC Controls</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="site-hero">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-overlay py-3">
+          <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html" aria-label="TC Controls — back to landing page home">
+              <span class="brand-mark" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264.708 70.404" role="img" aria-label="TC Controls">
+                  <g transform="translate(82.597 0.573)">
+                    <g>
+                      <g>
+                        <g>
+                          <path d="M459.9,7.663V5h18.069V7.663a1.708,1.708,0,0,1-1.708,1.708h-4.738V27.019h-5.214V9.371h-4.7A1.709,1.709,0,0,1,459.9,7.663Z" transform="translate(-459.9 -4.675)" fill="#fff"></path>
+                          <path d="M575.146,10.832V18.28c0,2.234,1.62,3.238,3.887,3.238a9.345,9.345,0,0,0,3.132-.485,1.978,1.978,0,0,1,2.38.943l1,1.906c-1.846,1.392-3.693,1.976-6.963,1.976-4.955,0-8.678-2.428-8.678-7.286V10.509c0-4.565,3.919-7.319,8.646-7.319a11,11,0,0,1,7.189,2.1L584.607,7.3a1.945,1.945,0,0,1-2.4.871,8.662,8.662,0,0,0-3.271-.578C576.734,7.594,575.146,8.759,575.146,10.832Z" transform="translate(-550.144 -3.19)" fill="#fff"></path>
+                        </g>
+                        <g transform="translate(44.384)">
+                          <path d="M712.276,10.832V18.28c0,2.234,1.62,3.238,3.887,3.238a9.345,9.345,0,0,0,3.132-.485,1.953,1.953,0,0,1,2.38.943l1,1.906c-1.846,1.392-3.693,1.976-6.963,1.976-4.955,0-8.678-2.428-8.678-7.286V10.509c0-4.565,3.919-7.319,8.646-7.319a11,11,0,0,1,7.189,2.1L721.737,7.3a1.945,1.945,0,0,1-2.4.871,8.662,8.662,0,0,0-3.271-.578C713.864,7.594,712.276,8.759,712.276,10.832Z" transform="translate(-707.03 -3.19)" fill="#fff"></path>
+                          <path d="M823.749,10.412v8.161c0,4.793-3.723,7.286-8.971,7.286h-.485c-5.311,0-9-2.428-9-7.286V10.412c0-4.565,3.854-7.222,8.971-7.222h.517C819.8,3.19,823.749,5.911,823.749,10.412Zm-5.246.42c0-2.137-1.586-3.27-3.725-3.27h-.517c-2.17,0-3.725,1.166-3.725,3.238v7.416c0,2.3,1.424,3.3,3.757,3.3h.485c2.267,0,3.725-1.036,3.725-3.3Z" transform="translate(-787.643 -3.19)" fill="#fff"></path>
+                          <path d="M942.17,4.992h2.865V27.011h-4.891l-8.711-14.054V25.051a1.961,1.961,0,0,1-1.961,1.961H926.64V4.992h4.89l8.678,14.183V6.951A1.961,1.961,0,0,1,942.17,4.99Z" transform="translate(-887.198 -4.667)" fill="#fff"></path>
+                          <path d="M1043.67,7.41V5h18.069V7.412a1.961,1.961,0,0,1-1.961,1.961H1055.3V27.019h-5.214V9.371h-4.451A1.961,1.961,0,0,1,1043.67,7.41Z" transform="translate(-983.21 -4.675)" fill="#fff"></path>
+                          <path d="M1172.158,17.953l4.468,9.068h-5.6l-3.693-7.9h-3.206v7.9h-5.246V5h9.488c4.533,0,7.545,1.911,7.545,6.347v1a5.461,5.461,0,0,1-3.757,5.6Zm-8.032-2.883h3.919c1.327,0,2.622-.713,2.622-2.2V11.541c0-1.457-1.133-2.17-2.654-2.17h-3.886v5.7Z" transform="translate(-1077.729 -4.675)" fill="#fff"></path>
+                          <path d="M1286.969,10.412v8.161c0,4.793-3.725,7.286-8.971,7.286h-.487c-5.311,0-9-2.428-9-7.286V10.412c0-4.565,3.854-7.222,8.969-7.222H1278C1283.018,3.19,1286.969,5.911,1286.969,10.412Zm-5.246.42c0-2.137-1.586-3.27-3.723-3.27h-.519c-2.17,0-3.723,1.166-3.723,3.238v7.416c0,2.3,1.424,3.3,3.757,3.3H1278c2.266,0,3.723-1.036,3.723-3.3V10.832Z" transform="translate(-1167.669 -3.19)" fill="#fff"></path>
+                          <path d="M1395.114,6.959V22.68H1403a1.961,1.961,0,0,1,1.961,1.961v2.38h-15.09V5h3.285a1.961,1.961,0,0,1,1.961,1.961Z" transform="translate(-1267.233 -4.675)" fill="#fff"></path>
+                        </g>
+                      </g>
+                      <g transform="translate(3.91 30.313)">
+                        <path d="M491.32,181.622h8.1v10.427a14.382,14.382,0,0,1-8.452,2.59c-5.246,0-9.294-2.331-9.294-7.286v-8.064c0-4.761,4.177-7.319,9.391-7.319a14.054,14.054,0,0,1,7.61,2.073l-.941,2a1.965,1.965,0,0,1-2.509.982,10.063,10.063,0,0,0-3.9-.686c-2.461,0-4.4,1.133-4.4,3.335V187c0,2.4,1.782,3.3,4.048,3.3a8.151,8.151,0,0,0,3.206-.517v-4.145h-.889a1.961,1.961,0,0,1-1.961-1.961V181.62Z" transform="translate(-481.67 -171.97)" fill="#fff"></path>
+                        <path d="M612.318,186.733l4.468,9.068h-5.6l-3.693-7.9h-3.206v7.9H599.04V173.78h9.488c4.533,0,7.545,1.911,7.545,6.347v1a5.459,5.459,0,0,1-3.757,5.6Zm-8.032-2.883H608.2c1.327,0,2.622-.713,2.622-2.2v-1.327c0-1.457-1.133-2.17-2.656-2.17h-3.887v5.7Z" transform="translate(-577.961 -173.455)" fill="#fff"></path>
+                        <path d="M727.129,179.192v8.161c0,4.793-3.725,7.286-8.971,7.286h-.487c-5.311,0-9-2.428-9-7.286v-8.161c0-4.565,3.854-7.222,8.969-7.222h.519C723.178,171.97,727.129,174.691,727.129,179.192Zm-5.246.42c0-2.137-1.586-3.27-3.723-3.27h-.519c-2.17,0-3.723,1.166-3.723,3.238V187c0,2.3,1.424,3.3,3.757,3.3h.487c2.267,0,3.723-1.036,3.723-3.3v-7.383Z" transform="translate(-667.901 -171.97)" fill="#fff"></path>
+                        <path d="M845.17,173.78h3.285v14.831c0,5.02-4.177,7.513-9.163,7.513s-9.262-2.46-9.262-7.513V173.78h3.285a1.961,1.961,0,0,1,1.961,1.961v12.611c0,2.364,1.879,3.432,3.984,3.432s3.951-1.1,3.951-3.432V175.741a1.961,1.961,0,0,1,1.961-1.961Z" transform="translate(-767.465 -173.455)" fill="#fff"></path>
+                        <path d="M962.391,173.78c4.4,0,7.545,2.17,7.545,6.282v2.622c0,3.919-3.464,5.894-7.48,5.894h-4.21V195.8H953V173.78Zm2.3,6.9a2.42,2.42,0,0,0-2.622-2.525h-3.822v6.379h3.822a2.349,2.349,0,0,0,2.622-2.46v-1.392Z" transform="translate(-868.35 -173.455)" fill="#fff"></path>
+                      </g>
+                    </g>
+                  </g>
+                  <g>
+                    <g transform="translate(33.274)">
+                      <path d="M224.164,11.559V25.4a2.83,2.83,0,0,1-2.827,2.829l-18.382.007a.9.9,0,0,0-.9.9v9.282a2.831,2.831,0,0,1-1.525,2.511L189.383,46.71a2.822,2.822,0,0,1-1.3.318V40.9a.858.858,0,0,0,.4-.1l7.92-4.111V29.131a.9.9,0,0,0-.9-.9h-3.678a.9.9,0,0,0-.9.9v3.734a.9.9,0,0,1-.9.9h-3.863a.9.9,0,0,1-.9-.9V24.75a2.171,2.171,0,0,1,2.171-2.171l30.167-.013a.9.9,0,0,0,.9-.9V11.559a5.9,5.9,0,0,0-5.9-5.9H185.27V0H212.6A11.559,11.559,0,0,1,224.164,11.559Z" transform="translate(-185.27)" fill="#f8951d"></path>
+                      <path d="M223.363,89a2.834,2.834,0,0,0-3.33-.539l-30.481,15.788a3.2,3.2,0,0,1-1.471.357v5.656a8.873,8.873,0,0,0,4.068-.986L218.14,95.815a.251.251,0,0,1,.366.223v1.4a7.126,7.126,0,0,1-3.653,6.212l-21.9,11.426a10.68,10.68,0,0,1-4.871,1.234v5.668a16.323,16.323,0,0,0,7.489-1.888l21.9-11.426a12.738,12.738,0,0,0,6.692-11.227V91.026a2.885,2.885,0,0,0-.8-2.028Zm-12.8-26.139H185.27v5.657H211.9a.9.9,0,0,0,.9-.9V65.092A2.233,2.233,0,0,0,210.563,62.86Z" transform="translate(-185.27 -51.57)" fill="#f8951d"></path>
+                    </g>
+                    <g>
+                      <path d="M33.274,0V5.657H11.913a6.254,6.254,0,0,0-6.254,6.255v1.931a.9.9,0,0,1-.9.9H.9a.9.9,0,0,1-.9-.9V11.913A11.912,11.912,0,0,1,11.913,0Z" fill="#f4792d"></path>
+                      <path d="M10.97,95.831V80.707a.9.9,0,0,0-.9-.9H6.555a.9.9,0,0,0-.9.9V97.619a7.113,7.113,0,0,0,3.649,6.205l21.724,11.246a10.667,10.667,0,0,0,5.052,1.236v5.668H36a16.321,16.321,0,0,1-7.581-1.888L6.69,108.841A12.738,12.738,0,0,1,0,97.619V76.98a2.828,2.828,0,0,1,2.829-2.829H10.97V65.689A2.828,2.828,0,0,1,13.8,62.86H33.274v5.657H17.525a.9.9,0,0,0-.9.9V93.239A2.739,2.739,0,0,0,18.1,95.667l16.519,8.587a3.214,3.214,0,0,0,1.464.352v5.656a8.856,8.856,0,0,1-4.064-.984L13.2,99.494a4.107,4.107,0,0,1-2.227-3.664Z" transform="translate(0 -51.57)" fill="#f4792d"></path>
+                      <path d="M137.06,144.043v6.126a2.829,2.829,0,0,1-1.3-.318l-11.149-5.788a2.83,2.83,0,0,1-1.527-2.513V126.618a.9.9,0,0,1,.9-.9h3.863a.9.9,0,0,1,.9.9v12.671a.9.9,0,0,0,.483.8l7.435,3.86A.86.86,0,0,0,137.06,144.043Z" transform="translate(-100.975 -103.141)" fill="#f4792d"></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </a>
+      
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="mainNav">
+              <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                <li class="nav-item">
+                  <a class="nav-link active" href="index.html" aria-current="page">How utility incentives work</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-link-external" href="https://www.tccontrols.com/" rel="noopener">TC Control Group site <i class="bi bi-box-arrow-up-right ms-1" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item ms-lg-2">
+                  <a class="btn btn-tc-primary btn-sm px-3" href="../free-assessment/">Schedule a Free Assessment</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      
+        <section class="hero-content hero-content--incentives">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 hero-copy">
+                <p class="hero-kicker">Building Controls & Commercial Utility Incentives</p>
+                <h1 class="hero-title mb-3">
+                  <span class="hero-title-line is-visible">How Commercial Utility Incentives Work</span>
+                </h1>
+                <p class="hero-subtitle mb-4" style="font-size: 1.15rem; color: rgba(255,255,255,.82); max-width: 540px;">
+                  Understanding the programs, the process, and how TC Controls helps you navigate incentives from National Grid, Eversource, and other utilities.
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3">
+                  <a class="btn btn-tc-primary btn-lg" href="../free-assessment/">Request a No-Obligation Assessment</a>
+                  <a class="btn btn-outline-light btn-lg" href="../index.html">Back to Home</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </header>
+
+    <main>
+      <section class="incentive-path-module py-5" aria-labelledby="path-module-heading">
+        <div class="container">
+          <h2 id="path-module-heading" class="incentive-path-module-title">Which path applies to your building?</h2>
+
+          <div class="path-toggle" role="group" aria-label="Choose prescriptive or custom incentive path">
+            <div class="path-toggle-track">
+              <button type="button" class="path-toggle-btn is-active" id="path-toggle-prescriptive" data-path="prescriptive" aria-pressed="true" aria-controls="path-panel-prescriptive">
+                <span class="path-toggle-label">Prescriptive path</span>
+                <span class="path-toggle-hint">Under 300,000 sq ft</span>
+              </button>
+              <button type="button" class="path-toggle-btn" id="path-toggle-custom" data-path="custom" aria-pressed="false" aria-controls="path-panel-custom">
+                <span class="path-toggle-label">Custom path</span>
+                <span class="path-toggle-hint">Over 300,000 sq ft</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="path-panels mt-4">
+            <div id="path-panel-prescriptive" class="path-panel path-panel--prescriptive" role="region" aria-labelledby="path-toggle-prescriptive" tabindex="-1">
+              <div class="prescriptive-tabs" data-path-section-tabs>
+                <div class="prescriptive-tablist" role="tablist" aria-label="Prescriptive path topics">
+                  <button type="button" class="prescriptive-tab is-active" role="tab" id="tab-incentives" aria-selected="true" aria-controls="panel-incentives" data-path-tab="incentives">Available Incentives</button>
+                  <button type="button" class="prescriptive-tab" role="tab" id="tab-how" aria-selected="false" aria-controls="panel-how" data-path-tab="how" tabindex="-1">How It Works</button>
+                  <button type="button" class="prescriptive-tab" role="tab" id="tab-eligibility" aria-selected="false" aria-controls="panel-eligibility" data-path-tab="eligibility" tabindex="-1">Eligibility</button>
+                </div>
+
+                <div id="panel-incentives" class="prescriptive-tabpanel" role="tabpanel" aria-labelledby="tab-incentives" data-path-panel="incentives">
+                  <div class="prescriptive-block">
+                    <h4 class="prescriptive-subheading">BMS control incentives</h4>
+                    <p class="prescriptive-lead">TC Controls helps building owners access <strong>BMS control incentives</strong> through Massachusetts utility incentive programs. For buildings under 300,000 square feet, incentive rates are standardized based on project type:</p>
+                    <div class="table-responsive">
+                      <table class="prescriptive-table table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Project type</th>
+                            <th scope="col">Incentive rate</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Installation of new BMS</td>
+                            <td>$0.10 / sequence / sq ft</td>
+                          </tr>
+                          <tr>
+                            <td>Upgrade of existing BMS</td>
+                            <td>$0.05 / sequence / sq ft</td>
+                          </tr>
+                          <tr>
+                            <td>Subscription-based system control</td>
+                            <td>$0.01 / pre-paid year</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="prescriptive-block prescriptive-block--spaced">
+                    <h4 class="prescriptive-subheading">Building control &amp; active demand response enrollment</h4>
+                    <p class="prescriptive-lead">Additional incentives are available through <strong>building control &amp; active demand response enrollment</strong>:</p>
+                    <div class="table-responsive">
+                      <table class="prescriptive-table table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Building annual usage</th>
+                            <th scope="col">Enrollment incentive</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Over 1.5 million kWh</td>
+                            <td>$3,000</td>
+                          </tr>
+                          <tr>
+                            <td>1.5 million kWh or less</td>
+                            <td>$500</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="panel-how" class="prescriptive-tabpanel" role="tabpanel" aria-labelledby="tab-how" data-path-panel="how" hidden>
+                  <h3 class="prescriptive-section-title">How It Works</h3>
+                  <p class="prescriptive-lead mb-4">TC Controls manages every step of the incentive process — you don’t need to contact the utility or navigate the paperwork yourself.</p>
+                  <ol class="prescriptive-steps">
+                    <li>
+                      <span class="prescriptive-step-title">We evaluate your building and confirm eligibility.</span>
+                      <p>We review your current controls, building size, and utility provider to determine which incentive programs apply.</p>
+                    </li>
+                    <li>
+                      <span class="prescriptive-step-title">We handle the pre-approval process.</span>
+                      <p>All building control systems require pre-approval from your utility provider before installation. We prepare and submit the application, the incentive calculations, and the proposed sequences of operation on your behalf. If your project is served by both a gas and electric provider, we coordinate submissions to both.</p>
+                    </li>
+                    <li>
+                      <span class="prescriptive-step-title">We design, engineer, and install the upgrade.</span>
+                      <p>Once pre-approval is issued, we handle the full project — from scope development through commissioning.</p>
+                    </li>
+                    <li>
+                      <span class="prescriptive-step-title">We complete the post-installation documentation.</span>
+                      <p>After installation, we submit all required final documentation to your utility provider, including post-installation signatures, final control drawings, sequences of operation, trend data reports, system screenshots, and the final invoice. We make sure nothing is missing or incomplete so your incentive isn’t delayed.</p>
+                    </li>
+                  </ol>
+                </div>
+
+                <div id="panel-eligibility" class="prescriptive-tabpanel" role="tabpanel" aria-labelledby="tab-eligibility" data-path-panel="eligibility" hidden>
+                  <h3 class="prescriptive-section-title">Eligibility</h3>
+                  <p class="prescriptive-lead">To qualify under the prescriptive path, your project must meet the following criteria:</p>
+                  <ul class="prescriptive-list">
+                    <li>Building area under 300,000 square feet</li>
+                    <li>Must be an existing customer of Berkshire Gas, Cape Light Compact, Eversource, Liberty Utilities, National Grid, or Unitil</li>
+                    <li>All building control systems require pre-approval prior to implementation (some projects may require pre-inspection)</li>
+                    <li>The BMS must include a central operator’s station with a central processing unit, PC (local or remote), and monitor — capable of monitoring all sensors and field devices in real time</li>
+                    <li>Trend data and screenshots are required to verify that implemented sequences align with design expectations</li>
+                  </ul>
+                  <p class="prescriptive-negative-heading"><strong>Not eligible under this path:</strong></p>
+                  <ul class="prescriptive-list">
+                    <li>Buildings with significant process or lab loads (may be eligible under the <a href="#" class="path-jump-link" data-path-jump="custom">custom path</a>)</li>
+                    <li>Standalone front-end upgrades or software-only updates</li>
+                    <li>Buildings with new loads or significant changes in how the space is used</li>
+                    <li>New construction, building additions, or buildings already in the National Grid New Construction &amp; Major Renovations program</li>
+                    <li>Replacement of existing BMS less than 15 years old</li>
+                    <li>Standalone control products for individual pieces of equipment</li>
+                    <li>Systems that have already received a rebate within the last 5 years</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="path-panel-custom" class="path-panel path-panel--prescriptive" role="region" aria-labelledby="path-toggle-custom" tabindex="-1" hidden>
+              <div class="prescriptive-tabs" data-path-section-tabs>
+                <div class="prescriptive-tablist" role="tablist" aria-label="Custom path topics">
+                  <button type="button" class="prescriptive-tab is-active" role="tab" id="tab-custom-incentives" aria-selected="true" aria-controls="panel-custom-incentives" data-path-tab="incentives">Available Incentives</button>
+                  <button type="button" class="prescriptive-tab" role="tab" id="tab-custom-how" aria-selected="false" aria-controls="panel-custom-how" data-path-tab="how" tabindex="-1">How It Works</button>
+                  <button type="button" class="prescriptive-tab" role="tab" id="tab-custom-eligibility" aria-selected="false" aria-controls="panel-custom-eligibility" data-path-tab="eligibility" tabindex="-1">Eligibility</button>
+                </div>
+
+                <div id="panel-custom-incentives" class="prescriptive-tabpanel" role="tabpanel" aria-labelledby="tab-custom-incentives" data-path-panel="incentives">
+                  <h3 class="prescriptive-section-title">Available Incentives</h3>
+                  <p class="prescriptive-lead">For larger buildings, incentive amounts are determined on a project-by-project basis through a custom energy analysis. Rather than fixed rates, your incentive is calculated based on the projected energy savings specific to your building — which means the incentive scales with the size and impact of your project.</p>
+                  <p class="prescriptive-lead mb-0">Energy-efficiency equipment or projects not covered by standard prescriptive incentives may also be eligible under this path.</p>
+                </div>
+
+                <div id="panel-custom-how" class="prescriptive-tabpanel" role="tabpanel" aria-labelledby="tab-custom-how" data-path-panel="how" hidden>
+                  <h3 class="prescriptive-section-title">How It Works</h3>
+                  <p class="prescriptive-lead mb-4">TC Controls manages the entire custom incentive process end-to-end — from the initial energy assessment through project completion.</p>
+                  <ol class="prescriptive-steps">
+                    <li>
+                      <span class="prescriptive-step-title">We start with a building energy assessment.</span>
+                      <p>We evaluate your current systems and identify energy-saving opportunities, including estimated costs to implement.</p>
+                    </li>
+                    <li>
+                      <span class="prescriptive-step-title">We work with your utility provider to determine the best opportunities.</span>
+                      <p>We coordinate directly with your electric and/or natural gas provider to prioritize the most impactful savings measures for your building.</p>
+                    </li>
+                    <li>
+                      <span class="prescriptive-step-title">We handle the project design and development.</span>
+                      <p>Once the opportunity is defined, we pursue the full engineering and design scope.</p>
+                    </li>
+                    <li>
+                      <span class="prescriptive-step-title">We prepare and submit all required documentation.</span>
+                      <p>This includes the custom project application, itemized project proposal (material and labor), product specifications, photos and trend data of existing conditions, and energy savings calculations. We submit everything to your utility provider on your behalf.</p>
+                    </li>
+                    <li>
+                      <span class="prescriptive-step-title">Your utility provider reviews the project.</span>
+                      <p>They conduct a technical review to confirm that energy saving benefits exceed the costs. This typically takes around 40 days, though timelines can vary.</p>
+                    </li>
+                    <li>
+                      <span class="prescriptive-step-title">You receive a custom incentive offer.</span>
+                      <p>After a successful review, your utility provider issues an incentive offer specific to your project.</p>
+                    </li>
+                    <li>
+                      <span class="prescriptive-step-title">We complete the project.</span>
+                      <p>We execute the installation and commissioning in accordance with the terms of your incentive offer.</p>
+                    </li>
+                  </ol>
+                </div>
+
+                <div id="panel-custom-eligibility" class="prescriptive-tabpanel" role="tabpanel" aria-labelledby="tab-custom-eligibility" data-path-panel="eligibility" hidden>
+                  <h3 class="prescriptive-section-title">Eligibility</h3>
+                  <ul class="prescriptive-list">
+                    <li>Must be an existing customer of Berkshire Gas, Cape Light Compact, Eversource, Liberty Utilities, National Grid, or Unitil.</li>
+                    <li>All applications require documented proposed cost, projected electricity and/or natural gas savings, and related non-energy savings.</li>
+                    <li>For projects involving new construction, major renovations, or replacement with higher-efficiency equipment, contact us to discuss your options.</li>
+                  </ul>
+                  <p class="prescriptive-negative-heading mb-2"><strong>BMS-specific measures eligible under this path include:</strong></p>
+                  <ul class="prescriptive-list">
+                    <li>Building Management Systems (BMS) for lab or process spaces</li>
+                    <li>Adding heat recovery</li>
+                    <li>Adding combustion controls</li>
+                  </ul>
+                  <p class="prescriptive-aside-note mb-4">For non-BMS energy efficiency measures that may also qualify for custom incentives, visit <a href="https://www.masssave.com/en/business/rebates-offers-services/custom-incentives-and-technical-support/custom-incentives" target="_blank" rel="noopener noreferrer">Mass Save — Custom Incentives</a>.</p>
+                  <aside class="prescriptive-callout">
+                    <i class="bi bi-file-earmark-text prescriptive-callout-icon" aria-hidden="true"></i>
+                    <div>
+                      <p class="mb-0"><strong>Want to see the raw program documentation?</strong> The official custom project forms and savings calculators are on <a href="https://www.masssave.com/en/business/rebates-offers-services/custom-incentives-and-technical-support/custom-incentives" target="_blank" rel="noopener noreferrer">Mass Save — Custom Incentives</a>. Fair warning — they’re complex. That’s exactly why we handle this part for you.</p>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content text-center mx-auto">
+          <h2 class="cta-title mb-3">Ready to see where utility incentives might be a fit for your building?</h2>
+          <p class="cta-subtitle mb-4">Request a no-obligation project assessment. We'll review your building details, then visit on-site to develop your incentive estimate.</p>
+          <a href="../free-assessment/" class="btn btn-outline-light btn-lg">Request a No-Obligation Assessment</a>
+        </div>
+      </div>
+    </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/section2-particles.js"></script>
+  <script src="how-utility-incentives-work.js"></script>
+</body>
+</html>
