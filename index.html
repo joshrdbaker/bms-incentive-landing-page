@@ -10,6 +10,7 @@
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 
 </head>
 <body>
@@ -90,13 +91,13 @@
                   <span class="hero-title-line is-visible" id="heroTitle1">Utility Incentives Can Be Confusing.</span><span class="hero-title-line hero-title-sub" id="heroTitle2"> TC Helps You Take Control.</span>
                 </h1>
       
-                <div class="d-flex flex-column flex-sm-row gap-3">
-                  <a class="btn btn-tc-primary btn-lg" href="free-assessment/">Request a No-Obligation Assessment</a>
-                  <a class="btn btn-outline-light btn-lg" href="how-utility-incentives-work/">See how it works</a>
+                <div class="d-flex flex-column flex-sm-row gap-3 hero-cta-row">
+                  <a class="btn btn-tc-primary" href="free-assessment/">Request a No-Obligation Assessment</a>
+                  <a class="btn btn-outline-light" href="how-utility-incentives-work/">See how it works</a>
                 </div>
               </div>
       
-              <div class="col-lg-6 d-none d-lg-block">
+              <div class="col-lg-6 hero-visual-col d-none d-lg-block">
                 <div class="hero-visual">
                   <div class="hero-artboard" id="heroArtboard">
                     <div class="particle-scene" id="particleScene" aria-hidden="true">
@@ -221,10 +222,10 @@
         <div class="container sticky-scroll-inner pt-0">
           <div class="row g-4 g-lg-0 align-items-lg-stretch">
 
-            <div class="col-lg-6 feature-graphic-col d-none d-lg-block">
+            <div class="col-lg-6 feature-graphic-col feature-graphic-col--contained d-none d-lg-block">
               <div class="sticky-scroll-visual">
-                <div class="feature-graphic feature-graphic--bleed-left" id="featureGraphic" aria-hidden="true">
-                  <img class="feature-graphic-img" id="section2Building" src="assets/section-two-building.png" alt="">
+                <div class="feature-graphic feature-graphic--contained" id="featureGraphic" aria-hidden="true">
+                  <img class="feature-graphic-img" id="section2Building" src="assets/new-building-option-v2.png" alt="">
                 </div>
               </div>
             </div>
@@ -251,9 +252,9 @@
                     <div class="sticky-copy-block" id="panel3">
                       <span class="mobile-panel-icon d-lg-none" aria-hidden="true"><i class="bi bi-check2-circle"></i></span>
                       <h2 class="mb-3">A Better Way To Upgrade</h2>
-                      <p>In Massachusetts, incentive programs through utilities like National Grid and Eversource can cover a significant portion of the cost of a controls upgrade. TC Controls pairs those incentives with an end-to-end managed process and real project experience with both utilities. So you get the upside of a subsidized upgrade with the confidence of a partner who knows how to get it done.</p>
+                      <p>In Massachusetts, incentive programs through utilities like National Grid and Eversource can cover a significant portion of the cost of a controls upgrade. <strong>TC Controls pairs those incentives with an end-to-end managed process and real project experience with both utilities.</strong> So you get the upside of a subsidized upgrade with the confidence of a partner who knows how to get it done.</p>
                       <div class="panel3-cta-wrap mt-4">
-                        <a href="how-utility-incentives-work/" class="btn btn-tc-primary btn-sm panel3-cta-btn" style="color: #f4792d;">Learn more about how utility incentives work</a>
+                        <a href="how-utility-incentives-work/" class="btn btn-lg panel3-cta-btn">Learn More About How Utility Incentives Work</a>
                       </div>
                     </div>
                   </div>
@@ -265,7 +266,7 @@
         </div>
       </div>
 
-      <section class="process-section py-5">
+      <section class="process-section">
         <div class="container">
           <div class="process-intro text-center mx-auto mb-5">
             <h2 class="process-title mb-3">End-to-End<br>Peace-of-Mind </h2>
@@ -324,7 +325,7 @@
         </div>
       </section>
 
-      <section class="quote-section">
+      <section class="quote-section d-none" aria-hidden="true">
         <div class="container">
           <blockquote class="testimonial-quote">
             <p class="quote-text">TC Controls took the incentive process off our plate entirely. We didn't have to chase paperwork or figure out the program requirements — they handled it end-to-end. It was a huge relief for our team.</p>
@@ -336,7 +337,7 @@
         </div>
       </section>
 
-      <section class="py-5" style="background: #f8f7f4;">
+      <section class="py-5 d-none" style="background: #f8f7f4;" aria-hidden="true">
         <div class="container text-center">
           <a href="how-utility-incentives-work/" class="btn btn-process-outline btn-lg" style="border-color: #f4792d; color: #1a1a1a;">Learn more about how utility incentives work</a>
         </div>
@@ -346,70 +347,74 @@
         <div class="container">
           <div class="row g-4 g-lg-5 justify-content-center">
             <div class="col-lg-6">
-              <a href="#" class="case-study-card">
-                <div class="case-study-image">
-                  <img src="https://placehold.co/800x600/e8e6e4/6b6b6b?text=1441+Main+Street" alt="1441 Main Street Springfield">
+              <article class="case-study-card">
+                <div class="case-study-image case-study-image--map">
+                  <div id="caseStudyMapSpringfield" class="case-study-map-canvas" aria-label="Map showing 1441 Main Street, Springfield, Massachusetts"></div>
                 </div>
-                <div class="case-study-content">
-                  <h3 class="case-study-title">1441 Main Street Springfield</h3>
-                  <ul class="case-study-facts">
-                    <li>
-                      <span class="case-study-fact-label">Incentive program</span>
-                      <span class="case-study-fact-value">National Grid</span>
-                    </li>
-                    <li>
-                      <span class="case-study-fact-label">Project value</span>
-                      <span class="case-study-fact-value">$1.2M</span>
-                    </li>
-                    <li>
-                      <span class="case-study-fact-label">Scope</span>
-                      <span class="case-study-fact-value">Scope of project defined here</span>
-                    </li>
-                    <li>
-                      <span class="case-study-fact-label">Location</span>
-                      <span class="case-study-fact-value">Springfield, MA</span>
-                    </li>
-                    <li>
-                      <span class="case-study-fact-label">Timeline</span>
-                      <span class="case-study-fact-value">2024</span>
-                    </li>
-                  </ul>
-                  <span class="case-study-cta">View project details <i class="bi bi-arrow-right"></i></span>
-                </div>
-              </a>
+                <a href="#" class="case-study-card-link">
+                  <div class="case-study-content">
+                    <h3 class="case-study-title">1441 Main Street Springfield</h3>
+                    <ul class="case-study-facts">
+                      <li>
+                        <span class="case-study-fact-label">Incentive program</span>
+                        <span class="case-study-fact-value">National Grid</span>
+                      </li>
+                      <li>
+                        <span class="case-study-fact-label">Project value</span>
+                        <span class="case-study-fact-value">$1.2M</span>
+                      </li>
+                      <li>
+                        <span class="case-study-fact-label">Scope</span>
+                        <span class="case-study-fact-value">Scope of project defined here</span>
+                      </li>
+                      <li>
+                        <span class="case-study-fact-label">Location</span>
+                        <span class="case-study-fact-value">Springfield, MA</span>
+                      </li>
+                      <li>
+                        <span class="case-study-fact-label">Timeline</span>
+                        <span class="case-study-fact-value">2024</span>
+                      </li>
+                    </ul>
+                    <span class="case-study-cta d-none" aria-hidden="true">View project details <i class="bi bi-arrow-right"></i></span>
+                  </div>
+                </a>
+              </article>
             </div>
             <div class="col-lg-6">
-              <a href="#" class="case-study-card">
-                <div class="case-study-image">
-                  <img src="https://placehold.co/800x600/e8e6e4/6b6b6b?text=101+Main+Street" alt="101 Main Street Cambridge">
+              <article class="case-study-card">
+                <div class="case-study-image case-study-image--map">
+                  <div id="caseStudyMapCambridge" class="case-study-map-canvas" aria-label="Map showing 101 Main Street, Cambridge, Massachusetts"></div>
                 </div>
-                <div class="case-study-content">
-                  <h3 class="case-study-title">101 Main Street Cambridge</h3>
-                  <ul class="case-study-facts">
-                    <li>
-                      <span class="case-study-fact-label">Incentive program</span>
-                      <span class="case-study-fact-value">National Grid</span>
-                    </li>
-                    <li>
-                      <span class="case-study-fact-label">Project value</span>
-                      <span class="case-study-fact-value">$890K</span>
-                    </li>
-                    <li>
-                      <span class="case-study-fact-label">Scope</span>
-                      <span class="case-study-fact-value">Scope of project defined here.</span>
-                    </li>
-                    <li>
-                      <span class="case-study-fact-label">Location</span>
-                      <span class="case-study-fact-value">Cambridge, MA</span>
-                    </li>
-                    <li>
-                      <span class="case-study-fact-label">Timeline</span>
-                      <span class="case-study-fact-value">2024</span>
-                    </li>
-                  </ul>
-                  <span class="case-study-cta">View project details <i class="bi bi-arrow-right"></i></span>
-                </div>
-              </a>
+                <a href="#" class="case-study-card-link">
+                  <div class="case-study-content">
+                    <h3 class="case-study-title">101 Main Street Cambridge</h3>
+                    <ul class="case-study-facts">
+                      <li>
+                        <span class="case-study-fact-label">Incentive program</span>
+                        <span class="case-study-fact-value">National Grid</span>
+                      </li>
+                      <li>
+                        <span class="case-study-fact-label">Project value</span>
+                        <span class="case-study-fact-value">$890K</span>
+                      </li>
+                      <li>
+                        <span class="case-study-fact-label">Scope</span>
+                        <span class="case-study-fact-value">Scope of project defined here.</span>
+                      </li>
+                      <li>
+                        <span class="case-study-fact-label">Location</span>
+                        <span class="case-study-fact-value">Cambridge, MA</span>
+                      </li>
+                      <li>
+                        <span class="case-study-fact-label">Timeline</span>
+                        <span class="case-study-fact-value">2024</span>
+                      </li>
+                    </ul>
+                    <span class="case-study-cta d-none" aria-hidden="true">View project details <i class="bi bi-arrow-right"></i></span>
+                  </div>
+                </a>
+              </article>
             </div>
           </div>
         </div>
@@ -528,7 +533,9 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="js/main.js"></script>
   <script src="js/section2-particles.js"></script>
+  <script src="js/case-study-maps.js"></script>
 </body>
 </html>

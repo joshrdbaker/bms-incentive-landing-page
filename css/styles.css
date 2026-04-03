@@ -16,6 +16,7 @@ body{
 
 .site-hero{
   position: relative;
+  z-index: 2;
   overflow: hidden;
   color: #fff;
   background:
@@ -134,7 +135,34 @@ body{
 }
 
 .hero-content{
-  padding: clamp(5rem, 8vw, 7rem) 0 clamp(2.5rem, 4vw, 3rem);
+  padding: clamp(6rem, 9.6vw, 8.4rem) 0 clamp(3rem, 4.8vw, 3.6rem);
+}
+
+/* Landing hero only: wider .container than Bootstrap defaults (more room for headline + CTAs in the 40% column) */
+@media (min-width: 576px){
+  .hero-content--landing > .container{
+    max-width: 600px;
+  }
+}
+@media (min-width: 768px){
+  .hero-content--landing > .container{
+    max-width: 800px;
+  }
+}
+@media (min-width: 992px){
+  .hero-content--landing > .container{
+    max-width: 1120px;
+  }
+}
+@media (min-width: 1200px){
+  .hero-content--landing > .container{
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1400px){
+  .hero-content--landing > .container{
+    max-width: 1480px;
+  }
 }
 
 /* Landing page only: tighter hero bottom + row nudge for PNG alignment */
@@ -146,6 +174,19 @@ body{
   .hero-content--landing .hero-content-row{
     margin-bottom: -20px;
   }
+
+  /* Copy / visual split: 40% / 60% */
+  .hero-content--landing .hero-content-row .hero-copy{
+    flex: 0 0 40%;
+    width: 40%;
+    max-width: 40%;
+  }
+
+  .hero-content--landing .hero-content-row .hero-visual-col{
+    flex: 0 0 60%;
+    width: 60%;
+    max-width: 60%;
+  }
 }
 
 .hero-copy{
@@ -153,16 +194,38 @@ body{
   z-index: 3;
 }
 
+.hero-content--landing .hero-copy{
+  transform: translateY(-40px);
+}
+
+/* Hero CTAs: a bit larger than default .btn; labels stay on one line from sm up */
+.hero-content--landing .hero-cta-row .btn{
+  padding: 0.55rem 1.25rem;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 576px){
+  .hero-content--landing .hero-cta-row{
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .hero-content--landing .hero-cta-row .btn{
+    white-space: nowrap;
+  }
+}
+
 .hero-visual{
   position: relative;
-  min-height: 520px;
+  min-height: 624px;
 }
 
 .hero-artboard{
   position: absolute;
   right: 50px;
   bottom: 0px;
-  width: min(100%, 620px);
+  width: min(100%, 828px);
   aspect-ratio: 1536 / 1152;
   z-index: 2;
   overflow: visible;
@@ -171,7 +234,7 @@ body{
 .hero-building,
 .particle-scene{
   position: absolute;
-  top: -15px;
+  top: 0;
   left: 60px;
   width: 100%;
   height: 100%;
@@ -182,7 +245,7 @@ body{
 .particle-scene .circuit-glow,
 .particle-scene .hero-target-logo{
   position: absolute;
-  top: -15px;
+  top: 0;
   left: 60px;
   width: 100%;
   height: 100%;
@@ -192,6 +255,7 @@ body{
   z-index: 2;
   pointer-events: none;
   object-fit: contain;
+  object-position: bottom center;
   filter: drop-shadow(0 18px 40px rgba(0,0,0,.28));
   /* Soft fade on left + right edges */
   -webkit-mask-image: linear-gradient(
@@ -300,6 +364,8 @@ body{
   opacity: 0;
   pointer-events: none;
   z-index: 1;
+  /* Same vertical offset as .circuit-traces / .circuit-glow so #targetPaths match visible tracers */
+  transform: translateY(25px);
 }
 
 @keyframes traceRace{
@@ -319,7 +385,7 @@ body{
 .hero-title{
   font-weight: 800;
   line-height: 1.05;
-  font-size: clamp(1.55rem, 2.65vw, 2.35rem);
+  font-size: clamp(1.85rem, 3.05vw, 2.8rem);
 }
 
 .hero-title-line{
@@ -380,6 +446,7 @@ body{
 
 .sticky-scroll-section{
   position: relative;
+  z-index: 1;
   overflow-x: clip;
   background:
     radial-gradient(800px 440px at 22% 40%, rgba(0,145,138,.06), transparent 60%),
@@ -391,7 +458,7 @@ body{
 @media (min-width: 992px){
   .sticky-scroll-section{
     overflow-x: visible;
-    min-height: 200vh;
+    min-height: 220vh;
     display: flex;
     flex-direction: column;
   }
@@ -403,7 +470,7 @@ body{
     min-height: 100vh;
     min-height: 100dvh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-start;
     will-change: transform;
   }
@@ -519,6 +586,49 @@ body{
   font-size: 1.05rem;
 }
 
+/* Sticky panels 2 & 3: ~15% larger type than base .sticky-copy-block */
+#panel2 h2,
+#panel3 h2{
+  font-size: clamp(1.84rem, 2.875vw, 2.53rem);
+}
+
+#panel2 p,
+#panel3 p{
+  font-size: 1.2075rem;
+}
+
+#panel2 .pain-list li,
+#panel2 .pain-list i{
+  font-size: 1.2075rem;
+}
+
+#panel2 .scroll-prompt{
+  font-size: 1.0925rem;
+}
+
+#panel2 .scroll-prompt-arrow{
+  font-size: 1.61rem;
+}
+
+/* Section 2 / panel 3 — “Learn more” CTA: larger, orange outline + text (matches scroll-prompt / TC orange) */
+#panel3 .panel3-cta-btn{
+  background: transparent;
+  border: 2px solid var(--tc-orange-left);
+  color: var(--tc-orange-left);
+  font-weight: 700;
+  font-size: 1.4375rem;
+  padding-left: 1.35rem;
+  padding-right: 1.35rem;
+  box-shadow: none;
+}
+
+#panel3 .panel3-cta-btn:hover,
+#panel3 .panel3-cta-btn:focus-visible{
+  background: rgba(244,121,45,.1);
+  border-color: var(--tc-orange-left);
+  color: var(--tc-orange-left);
+}
+
 .scroll-prompt{
   display: flex;
   flex-direction: column;
@@ -587,6 +697,32 @@ body{
     overflow: visible;
   }
 
+  /* Building stays inside the left column (no bleed). Do not use overflow:hidden here — it breaks
+     position:sticky on .sticky-scroll-visual, so the graphic would scroll away instead of staying pinned. */
+  .feature-graphic-col--contained{
+    min-width: 0;
+  }
+
+  .feature-graphic.feature-graphic--contained{
+    width: 100%;
+    max-width: 100%;
+    min-height: 540px;
+    margin: 0;
+  }
+
+  .feature-graphic--contained .feature-graphic-img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: bottom center;
+    margin: 0;
+    display: block;
+    transform: scale(1.71) translateX(-10%);
+    transform-origin: bottom center;
+    will-change: filter, transform;
+  }
+
   .feature-graphic.feature-graphic--bleed-left{
     max-width: none;
     width: min(265%, 1460px);
@@ -622,6 +758,8 @@ body{
 .process-section{
   position: relative;
   color: #fff;
+  padding-top: clamp(3.25rem, 7vw, 5.5rem);
+  padding-bottom: clamp(3.25rem, 7vw, 5.5rem);
   background:
     radial-gradient(920px 520px at 16% 22%, rgba(0,145,138,.24), transparent 62%),
     radial-gradient(760px 440px at 86% 30%, rgba(244,121,45,.16), transparent 64%),
@@ -900,12 +1038,18 @@ body{
   border: 1px solid rgba(0,0,0,.06);
   text-decoration: none;
   color: inherit;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
+/* No transform on the card: CSS transform on an ancestor breaks Leaflet tile alignment. */
 .case-study-card:hover{
   box-shadow: 0 12px 40px rgba(0,0,0,.12);
-  transform: translateY(-4px);
+}
+
+.case-study-card-link{
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .case-study-image{
@@ -918,6 +1062,32 @@ body{
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Leaflet: map must fill a sized box; absolute fill + invalidateSize() keeps tiles aligned. */
+.case-study-image--map{
+  position: relative;
+  background: #dfe5e8;
+}
+
+.case-study-map-canvas{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.case-study-image--map .leaflet-container{
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  background: #dfe5e8;
+}
+
+.case-study-marker-icon .case-study-marker-inner{
+  display: flex;
+  justify-content: center;
 }
 
 .case-study-content{
@@ -982,10 +1152,10 @@ body{
   position: relative;
   padding: clamp(4rem, 8vw, 6rem) 0;
   background:
-    radial-gradient(800px 440px at 20% 50%, rgba(255,255,255,.12), transparent 55%),
-    radial-gradient(700px 400px at 80% 40%, rgba(244,121,45,.08), transparent 55%),
-    var(--tc-teal);
-  border-top: 1px solid rgba(255,255,255,.15);
+    radial-gradient(800px 440px at 20% 45%, rgba(255,255,255,.18), transparent 55%),
+    radial-gradient(700px 400px at 85% 35%, rgba(248,149,29,.35), transparent 55%),
+    linear-gradient(165deg, var(--tc-orange-left) 0%, var(--tc-orange-right) 100%);
+  border-top: 1px solid rgba(0,0,0,.08);
 }
 
 .faq-section::before{
@@ -1072,7 +1242,7 @@ body{
 }
 
 .faq-question:hover{
-  color: var(--tc-orange-left);
+  color: #1a1a1a;
 }
 
 .faq-answer{
@@ -1406,6 +1576,26 @@ body{
   border-color: rgba(0,0,0,.08);
   background: #fff;
   padding: clamp(1rem, 2vw, 1.75rem);
+}
+
+/* Small inline text CTA at bottom of each path tab panel (how-utility-incentives-work) */
+.path-section-cta{
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0,0,0,.08);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(0,0,0,.58);
+}
+
+.path-section-cta a{
+  font-weight: 600;
+  color: var(--tc-teal);
+  text-decoration: none;
+}
+
+.path-section-cta a:hover{
+  color: var(--tc-orange-left);
+  text-decoration: underline;
 }
 
 .prescriptive-tablist{
@@ -1889,7 +2079,7 @@ textarea.assessment-input{
 
   /* 1. Hero title: bigger */
   .hero-title{
-    font-size: clamp(1.9rem, 6vw, 2.3rem);
+    font-size: clamp(2.2rem, 6.5vw, 2.65rem);
   }
 
   /* 2. Scroll prompts hidden on mobile (only meaningful on desktop sticky scroll) */
@@ -1918,6 +2108,11 @@ textarea.assessment-input{
     font-size: 2.25rem;
     color: var(--tc-orange-left);
     margin-bottom: 0.85rem;
+  }
+
+  #panel2 .mobile-panel-icon,
+  #panel3 .mobile-panel-icon{
+    font-size: 2.5875rem;
   }
 
   /* First sticky panel: extra air above/beside the exclamation icon */

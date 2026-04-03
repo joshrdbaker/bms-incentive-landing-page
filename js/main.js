@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
   /** Two parallel rails along each trace (side-by-side doubling). */
   const rowOffsets = [-1, 1];
   const rowSpacing = 2.35;
-  const formationYOffset = 25;
+  /** Extra Y in scene px; keep 0 — layout uses .circuit-traces svg rect so nodes match painted tracers */
+  const formationYOffset = 0;
   const chaosDuration = prefersReducedMotion ? 100 : 1500;
   const formDuration = prefersReducedMotion ? 100 : 800;
   const teal = '#00918A';
@@ -32,8 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function createTargets() {
     const sceneRect = scene.getBoundingClientRect();
-    const svgRect = svg.getBoundingClientRect();
-    const svgViewBox = svg.viewBox.baseVal;
+    /* Same geometry as #targetPaths, but measure the *visible* tracer SVG so sx/sy and offsets match the artboard */
+    const layoutSvg = scene.querySelector('.circuit-traces svg') || svg;
+    const svgRect = layoutSvg.getBoundingClientRect();
+    const svgViewBox = layoutSvg.viewBox.baseVal;
     const sx = svgRect.width / svgViewBox.width;
     const sy = svgRect.height / svgViewBox.height;
     const pathLengths = paths.map(function (path) {

@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!building || !stickySection) return;
 
+  /* Scroll through #stickySection is 0→1 over the section’s scroll range (CSS min-height sets how much wheel/track that is).
+     Wider SWAP_END − SWAP_START = more wheel/track for the same slide (slower feel). */
+  var SWAP_START = 0.66;
+  var SWAP_END = 0.99;
+
   var isDesktop = function () {
     return window.matchMedia('(min-width: 992px)').matches;
   };
@@ -18,8 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
     return Math.max(0, Math.min(1, raw));
   }
 
-  function easeInOutCubic(t) {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  /** Softer than ease-in-out cubic — less “snap” at the start/end of the panel slide. */
+  function easeInOutSine(t) {
+    return -(Math.cos(Math.PI * t) - 1) / 2;
   }
 
   function updateTextTrackScroll() {
@@ -30,10 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var p = getSectionScrollProgress();
-    var swapStart = 0.18;
-    var swapEnd = 0.82;
-    var t = Math.max(0, Math.min(1, (p - swapStart) / (swapEnd - swapStart)));
-    var eased = easeInOutCubic(t);
+    var t = Math.max(0, Math.min(1, (p - SWAP_START) / (SWAP_END - SWAP_START)));
+    var eased = easeInOutSine(t);
 
     var vpHeight = textViewport.offsetHeight;
     textTrack.style.transform = 'translate3d(0,' + (-eased * vpHeight) + 'px,0)';
@@ -41,8 +45,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function getClarityProgress() {
     const p = getSectionScrollProgress();
-    const raw = Math.max(0, Math.min(1, (p - 0.06) / 0.55));
-    return easeInOutCubic(raw);
+    /* Full blur while first headline is on screen; clarity reaches 1 only when the second headline is fully in view (same window as the text track slide). */
+    const raw = Math.max(0, Math.min(1, (p - SWAP_START) / (SWAP_END - SWAP_START)));
+    return easeInOutSine(raw);
   }
 
   var lastClarity = -1;
