@@ -1029,6 +1029,18 @@ body{
   z-index: 1;
 }
 
+.case-studies-intro{
+  max-width: 40rem;
+}
+
+.case-studies-section-title{
+  font-weight: 800;
+  font-size: clamp(1.65rem, 2.6vw, 2.25rem);
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
 .case-study-card{
   display: block;
   background: #fff;
