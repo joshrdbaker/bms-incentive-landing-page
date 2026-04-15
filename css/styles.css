@@ -2022,6 +2022,50 @@ textarea.assessment-input{
   line-height: 1.5;
 }
 
+.assessment-form-hubspot-wrap{
+  position: relative;
+}
+
+.btn-assessment-submit .btn-label,
+.btn-assessment-submit .btn-loading{
+  display: inline;
+}
+
+.btn-assessment-submit .btn-loading[hidden]{
+  display: none !important;
+}
+
+.form-message--error{
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  color: #fff;
+  background: rgba(180, 40, 40, 0.35);
+  border: 1px solid rgba(255, 120, 120, 0.45);
+}
+
+.form-success{
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 14px;
+  background: rgba(0, 145, 138, 0.2);
+  border: 1px solid rgba(0, 145, 138, 0.45);
+  text-align: center;
+}
+
+.form-success-title{
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: #fff;
+  margin: 0 0 0.65rem;
+}
+
+.form-success-text{
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.55;
+}
+
 .assessment-sidebar{
   position: sticky;
   top: 2rem;

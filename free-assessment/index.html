@@ -132,45 +132,46 @@
         </div>
       </section>
 
-      <section class="assessment-form-section">
+      <section class="assessment-form-section" id="assessmentForm">
         <div class="container">
           <div class="row g-5 align-items-start justify-content-center">
 
             <div class="col-lg-7">
-              <form class="assessment-form" id="assessmentForm" novalidate>
+              <div class="assessment-form-hubspot-wrap">
+                <form class="assessment-form" id="bms-assessment-form" novalidate>
                 <div class="assessment-form-group">
                   <h3 class="assessment-form-group-title"><i class="bi bi-person"></i> Your Information</h3>
                   <div class="row g-3">
                     <div class="col-sm-6">
                       <label for="firstName" class="assessment-label">First name</label>
-                      <input type="text" class="assessment-input" id="firstName" required>
+                      <input type="text" class="assessment-input" id="firstName" name="firstName" autocomplete="given-name" required>
                     </div>
                     <div class="col-sm-6">
                       <label for="lastName" class="assessment-label">Last name</label>
-                      <input type="text" class="assessment-input" id="lastName" required>
+                      <input type="text" class="assessment-input" id="lastName" name="lastName" autocomplete="family-name" required>
                     </div>
                     <div class="col-sm-6">
                       <label for="email" class="assessment-label">Email</label>
-                      <input type="email" class="assessment-input" id="email" required>
+                      <input type="email" class="assessment-input" id="email" name="email" autocomplete="email" required>
                     </div>
                     <div class="col-sm-6">
                       <label for="phone" class="assessment-label">Phone <span class="assessment-optional">(optional)</span></label>
-                      <input type="tel" class="assessment-input" id="phone">
+                      <input type="tel" class="assessment-input" id="phone" name="phone" autocomplete="tel">
                     </div>
                     <div class="col-12">
                       <label for="company" class="assessment-label">Company / Organization</label>
-                      <input type="text" class="assessment-input" id="company" required>
+                      <input type="text" class="assessment-input" id="company" name="company" autocomplete="organization" required>
                     </div>
                     <div class="col-12">
                       <label for="role" class="assessment-label">Your role</label>
-                      <select class="assessment-input" id="role" required>
+                      <select class="assessment-input" id="role" name="role" required>
                         <option value="" disabled selected>Select your role</option>
-                        <option value="owner">Building Owner</option>
-                        <option value="asset-manager">Asset Manager</option>
-                        <option value="facility-manager">Facility Manager</option>
-                        <option value="property-manager">Property Manager</option>
-                        <option value="engineer">Engineer / Consultant</option>
-                        <option value="other">Other</option>
+                        <option value="Building Owner">Building Owner</option>
+                        <option value="Asset Manager">Asset Manager</option>
+                        <option value="Facility Manager">Facility Manager</option>
+                        <option value="Property Manager">Property Manager</option>
+                        <option value="Engineer / Consultant">Engineer / Consultant</option>
+                        <option value="Other">Other</option>
                       </select>
                     </div>
                   </div>
@@ -181,50 +182,50 @@
                   <div class="row g-3">
                     <div class="col-12">
                       <label for="buildingAddress" class="assessment-label">Building address</label>
-                      <input type="text" class="assessment-input" id="buildingAddress" placeholder="Street address, city, state" required>
+                      <input type="text" class="assessment-input" id="buildingAddress" name="buildingAddress" placeholder="Street address, city, state" autocomplete="street-address" required>
                     </div>
                     <div class="col-sm-6">
                       <label for="sqft" class="assessment-label">Approximate square footage</label>
-                      <input type="text" class="assessment-input" id="sqft" placeholder="e.g. 125,000" required>
+                      <input type="text" class="assessment-input" id="sqft" name="sqft" placeholder="e.g. 125000 or 125,000" inputmode="numeric" required>
                     </div>
                     <div class="col-sm-6">
                       <label for="buildingType" class="assessment-label">Building type</label>
-                      <select class="assessment-input" id="buildingType" required>
+                      <select class="assessment-input" id="buildingType" name="buildingType" required>
                         <option value="" disabled selected>Select type</option>
-                        <option value="office">Office</option>
-                        <option value="retail">Retail</option>
-                        <option value="industrial">Industrial / Warehouse</option>
-                        <option value="healthcare">Healthcare</option>
-                        <option value="education">Education</option>
-                        <option value="campus">Campus</option>
-                        <option value="research-laboratory">Research / laboratory</option>
-                        <option value="hospitality">Hospitality</option>
-                        <option value="other">Other</option>
+                        <option value="Office">Office</option>
+                        <option value="Retail">Retail</option>
+                        <option value="Industrial / Warehouse">Industrial / Warehouse</option>
+                        <option value="Healthcare">Healthcare</option>
+                        <option value="Education">Education</option>
+                        <option value="Campus">Campus</option>
+                        <option value="Research / Laboratory">Research / Laboratory</option>
+                        <option value="Hospitality">Hospitality</option>
+                        <option value="Other">Other</option>
                       </select>
                     </div>
                     <div class="col-sm-6">
                       <label for="systemAge" class="assessment-label">Current control system age</label>
-                      <select class="assessment-input" id="systemAge" required>
+                      <select class="assessment-input" id="systemAge" name="systemAge" required>
                         <option value="" disabled selected>Select age range</option>
-                        <option value="unknown">Not sure</option>
-                        <option value="5-10">5 – 10 years</option>
-                        <option value="10-15">10 – 15 years</option>
-                        <option value="15-20">15 – 20 years</option>
-                        <option value="20+">20+ years</option>
-                        <option value="none">No BMS currently</option>
+                        <option value="Not sure">Not sure</option>
+                        <option value="5 – 10 years">5 – 10 years</option>
+                        <option value="10 – 15 years">10 – 15 years</option>
+                        <option value="15 – 20 years">15 – 20 years</option>
+                        <option value="20+ years">20+ years</option>
+                        <option value="No BMS currently">No BMS currently</option>
                       </select>
                     </div>
                     <div class="col-sm-6">
                       <label for="utility" class="assessment-label">Utility provider</label>
-                      <select class="assessment-input" id="utility">
+                      <select class="assessment-input" id="utility" name="utility">
                         <option value="" disabled selected>Select utility</option>
-                        <option value="national-grid">National Grid</option>
-                        <option value="eversource">Eversource</option>
-                        <option value="cape-light">Cape Light Compact</option>
-                        <option value="berkshire">Berkshire Gas</option>
-                        <option value="liberty">Liberty Utilities</option>
-                        <option value="unitil">Unitil</option>
-                        <option value="other">Other / Not sure</option>
+                        <option value="National Grid">National Grid</option>
+                        <option value="Eversource">Eversource</option>
+                        <option value="Cape Light Compact">Cape Light Compact</option>
+                        <option value="Berkshire Gas">Berkshire Gas</option>
+                        <option value="Liberty Utilities">Liberty Utilities</option>
+                        <option value="Unitil">Unitil</option>
+                        <option value="Other / Not sure">Other / Not sure</option>
                       </select>
                     </div>
                   </div>
@@ -235,16 +236,27 @@
                   <div class="row g-3">
                     <div class="col-12">
                       <label for="notes" class="assessment-label">Tell us about your situation <span class="assessment-optional">(optional)</span></label>
-                      <textarea class="assessment-input" id="notes" rows="4" placeholder="Known issues, upgrade timeline, access or scheduling notes for an on-site visit — anything that helps us understand your needs."></textarea>
+                      <textarea class="assessment-input" id="notes" name="notes" rows="4" placeholder="Known issues, upgrade timeline, access or scheduling notes for an on-site visit — anything that helps us understand your needs."></textarea>
                     </div>
                   </div>
                 </div>
 
                 <div class="assessment-form-submit">
-                  <button type="submit" class="btn btn-assessment-submit btn-lg w-100">Request My Free Assessment</button>
+                  <button type="submit" id="assessment-submit-btn" class="btn btn-assessment-submit btn-lg w-100">
+                    <span class="btn-label">Request My Free Assessment</span>
+                    <span class="btn-loading" hidden>Submitting…</span>
+                  </button>
                   <p class="assessment-disclaimer">No sales pressure. We'll review your submission and respond within one business day to discuss fit and schedule an on-site visit. Your formal incentive estimate is prepared after we've been on site.</p>
                 </div>
+
+                <div id="assessment-form-error" class="form-message form-message--error" role="alert" aria-live="assertive" hidden></div>
               </form>
+
+                <div id="assessment-form-success" class="form-success" hidden>
+                  <h3 class="form-success-title">You're all set.</h3>
+                  <p class="form-success-text mb-0">We'll review your building details and reach out within one business day to schedule your free assessment.</p>
+                </div>
+              </div>
             </div>
 
             <div class="col-lg-4 offset-lg-1">
@@ -307,6 +319,120 @@
 
     </main>
 
+  <script>
+(function () {
+  /* HubSpot Forms API v3 — field mapping (form names → contact properties):
+     firstName→firstname, lastName→lastname, email, phone, company,
+     role→bms_incentive_building_role, buildingAddress→bms_incentive_building_address,
+     sqft→bms_incentive_approx_sq_ft (digits only), buildingType→bms_incentive_building_type,
+     systemAge→bms_incentive_control_system_age, utility→bms_incentive_utility_provider,
+     notes→bms_incentive_additional_notes — all objectTypeId "0-1". */
+  var HS_SUBMIT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/22500112/6605bd0b-6603-4639-8688-b8bf3beabfc7';
+  var form = document.getElementById('bms-assessment-form');
+  var submitBtn = document.getElementById('assessment-submit-btn');
+  if (!form || !submitBtn) return;
+
+  var btnLabel = submitBtn.querySelector('.btn-label');
+  var btnLoading = submitBtn.querySelector('.btn-loading');
+  var errorEl = document.getElementById('assessment-form-error');
+  var successEl = document.getElementById('assessment-form-success');
+  var wrapEl = form.closest('.assessment-form-hubspot-wrap');
+
+  function field(name, value) {
+    return { objectTypeId: '0-1', name: name, value: value == null ? '' : String(value) };
+  }
+
+  function sqftToDigits(str) {
+    return String(str == null ? '' : str).replace(/\D/g, '');
+  }
+
+  function setLoading(loading) {
+    submitBtn.disabled = loading;
+    if (btnLabel) btnLabel.hidden = loading;
+    if (btnLoading) btnLoading.hidden = !loading;
+  }
+
+  function showError(msg) {
+    if (!errorEl) return;
+    errorEl.textContent = msg;
+    errorEl.hidden = false;
+  }
+
+  function hideError() {
+    if (errorEl) errorEl.hidden = true;
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    hideError();
+
+    var d = new FormData(form);
+    var sqDigits = sqftToDigits(d.get('sqft'));
+    if (!sqDigits) {
+      showError('Please enter a valid approximate square footage (numbers only).');
+      var sqInput = document.getElementById('sqft');
+      if (sqInput) sqInput.focus();
+      return;
+    }
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    setLoading(true);
+
+    var payload = {
+      fields: [
+        field('firstname', d.get('firstName')),
+        field('lastname', d.get('lastName')),
+        field('email', d.get('email')),
+        field('phone', d.get('phone')),
+        field('company', d.get('company')),
+        field('bms_incentive_building_role', d.get('role')),
+        field('bms_incentive_building_address', d.get('buildingAddress')),
+        field('bms_incentive_approx_sq_ft', sqDigits),
+        field('bms_incentive_building_type', d.get('buildingType')),
+        field('bms_incentive_control_system_age', d.get('systemAge')),
+        field('bms_incentive_utility_provider', d.get('utility')),
+        field('bms_incentive_additional_notes', d.get('notes'))
+      ],
+      context: {
+        pageUri: window.location.href,
+        pageName: document.title
+      }
+    };
+
+    try {
+      var res = await fetch(HS_SUBMIT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        form.hidden = true;
+        if (successEl) successEl.hidden = false;
+        var scrollTarget = wrapEl || successEl;
+        if (scrollTarget) {
+          var top = scrollTarget.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+        return;
+      }
+
+      var errBody = await res.json().catch(function () { return null; });
+      console.error('HubSpot form error:', res.status, errBody);
+      showError('Something went wrong. Please try again or call us directly.');
+    } catch (err) {
+      console.error('HubSpot form network error:', err);
+      showError('Something went wrong. Please try again or call us directly.');
+    }
+
+    setLoading(false);
+  });
+})();
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
