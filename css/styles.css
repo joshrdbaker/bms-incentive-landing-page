@@ -1074,7 +1074,6 @@ body{
   transition: box-shadow 0.3s ease;
 }
 
-/* No transform on the card: CSS transform on an ancestor breaks Leaflet tile alignment. */
 .case-study-card:hover{
   box-shadow: 0 12px 40px rgba(0,0,0,.12);
 }
@@ -1097,30 +1096,14 @@ body{
   display: block;
 }
 
-/* Leaflet: map must fill a sized box; absolute fill + invalidateSize() keeps tiles aligned. */
-.case-study-image--map{
-  position: relative;
-  background: #dfe5e8;
+/* Building illustrations (replace maps): show full art on light ground */
+.case-study-image--illustration{
+  background: #f4f4f2;
 }
 
-.case-study-map-canvas{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.case-study-image--map .leaflet-container{
-  width: 100%;
-  height: 100%;
-  font-family: inherit;
-  background: #dfe5e8;
-}
-
-.case-study-marker-icon .case-study-marker-inner{
-  display: flex;
-  justify-content: center;
+.case-study-image--illustration img{
+  object-fit: contain;
+  object-position: center center;
 }
 
 .case-study-content{
