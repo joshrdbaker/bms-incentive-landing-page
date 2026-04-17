@@ -7,6 +7,9 @@
 }
 
 html, body { height: 100%; }
+html{
+  overflow-x: hidden;
+}
 body{
   margin: 0;
   overflow-x: hidden;
@@ -1096,9 +1099,9 @@ body{
   display: block;
 }
 
-/* Building illustrations (replace maps): show full art on light ground */
+/* Building illustrations (replace maps): show full art on white ground */
 .case-study-image--illustration{
-  background: #f4f4f2;
+  background: #fff;
 }
 
 .case-study-image--illustration img{
@@ -1107,7 +1110,7 @@ body{
 }
 
 .case-study-content{
-  padding: 1.5rem 1.5rem 1.75rem;
+  padding: 0.875rem 1.5rem 1.75rem;
 }
 
 .case-study-title{
